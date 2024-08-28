@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use \Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/simples', function () {
+    return "<h1>Rota</h1>";
 });
+
+Route::post('/add', function (Request $request) {
+    return "<h1>Requisição POST</h1>";
+});
+
+
+Route::resource('/eixo', 'App\Http\Controllers\EixoController');
